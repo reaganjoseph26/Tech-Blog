@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const controllers = require('./controllers/home-routes')
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
@@ -15,11 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-    res.render('main');
-});
+
+app.use(controllers);
  
-app.listen(3000);
+app.listen(3001);
 
 
 // app.use(require('./controllers/'));
