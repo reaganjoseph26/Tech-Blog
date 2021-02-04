@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>
+                    <a href="/">The Tech Blog</a>
+                </h1>
+                <nav>
+                    {{#if loggedIn}}
+                    <a href="/dashboard">dashboard</a>
+                    <button id="logout" class="btn-no-style">logout</button>
+                    <a href="/login">login</a>
+                </nav>
+            </header>
+        </div>
+        
+        {{{body}}}
+    </body>
+</html>
