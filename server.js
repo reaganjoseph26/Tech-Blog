@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
-const controllers = require('./controllers/home-routes')
+const controllers = require('./controllers')
+const sequelize = require('./config/connection');
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
+
 
 var app = express();
 
@@ -19,7 +21,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(controllers);
  
-app.listen(3001);
+app.listen(3001, () => {
+    sequelize.sync({ force: false })
+})
 
 
 // app.use(require('./controllers/'));
