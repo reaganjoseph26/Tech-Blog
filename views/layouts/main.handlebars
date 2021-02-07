@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Example App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-    <body>
-        <div class="wrapper">
-            <header>
-                <h1>
-                    <a href="/">The Tech Blog</a>
-                </h1>
-                <nav>
-                    <a href="/dashboard">dashboard</a>
-                    <button id="logout" class="btn-no-style">logout</button>
-                    <a href="/login">login</a>
-                    <a href="/sign-up">Sign Up</a>
-                </nav>
-            </header>
-        </div>
-        {{{body}}}
-    </body>
+
+<header>
+    <h1><a href="/">Tech Blog</a></h1>
+    <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <button id="logout">Logout</button>
+        {{else}}
+        <a href="/login" class="login-link">Login</a>
+        {{/if}}
+    </nav>
+</header>
+
+<body>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+        Thanks for visiting our site!
+    </footer>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
 </html>
