@@ -18,6 +18,13 @@ Post.init(
                 len: [4]
             }
         },
+                text: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [4]
+            }
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -34,13 +41,6 @@ Post.init(
     }
 );
 
-// text: {
-//     type: DataTypes.TEXT,
-//     allowNull: false,
-//     validate: {
-//         len: [4]
-//     }
-// },
 
 
 module.exports = Post;
