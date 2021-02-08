@@ -1,3 +1,12 @@
+:root {
+	--primary: #ccdad1;
+	--secondary: #9caea9;
+	--tertiary: #788585;
+	--light-dark: #6f6866;
+	--dark: #38302e;
+	--border-radius: .3rem;
+}
+  
 * {
     box-sizing: border-box;
 }
@@ -7,22 +16,37 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    background-color: var(--primary);
 }
 
+#login-form, #signup-form {
+    color: black,
+    
+}
+
+header {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%
+}
+h1, a {
+    color: beige
+}
 a {
     text-decoration: none;
-    color: #225ca3;
+    color: beige;
     font-weight: bold;
     transition: color .1s;
 }
 
 a:hover {
-    color: #3486eb;
+    color: var(--light-dark);
 }
 
 button {
-    background-color: #225ca3;
+    background-color: var(--light-dark);
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +57,7 @@ button {
 }
 
 button:hover {
-    background-color: #3486eb;
+    background-color: var(--light-dark);
 }
 
 .post-list {
@@ -69,18 +93,11 @@ form label {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
 }
 
-header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-}
 
 header h1 {
     font-size: 1em;
@@ -97,7 +114,7 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: var(--dark);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -106,7 +123,7 @@ main {
 
 .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: var(--light-dark);
 }
 
 .delete-post-btn {
@@ -132,16 +149,6 @@ main {
     display: block;
     margin: -1.5% 0 2% 0;
 }
-
-.upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-    background-color: #1f9c13;
-}
-
 .comment-form {
     margin-bottom: 5%;
 }
@@ -170,7 +177,7 @@ main {
 }
 
 footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px (var(--dark));
     display: flex;
     justify-content: center;
     padding: 1%;
